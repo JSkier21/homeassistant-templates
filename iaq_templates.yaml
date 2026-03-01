@@ -1,0 +1,74 @@
+  - trigger:
+      - platform: webhook
+        webhook_id: **UPDATE_ME!**
+        local_only: false
+    sensor:
+      - name: "IAQ CO2"
+        unit_of_measurement: "ppm"
+        device_class: carbon_dioxide
+        state: "{{ trigger.json.co2 }}"
+
+      - name: "IAQ PM1"
+        unit_of_measurement: "µg/m³"
+        device_class: pm1
+        state: "{{ trigger.json.pm1 }}"
+
+      - name: "IAQ PM2.5"
+        unit_of_measurement: "µg/m³"
+        device_class: pm25
+        state: "{{ trigger.json.pm25 }}"
+
+      - name: "IAQ PM10"
+        unit_of_measurement: "µg/m³"
+        device_class: pm10
+        state: "{{ trigger.json.pm10 }}"
+
+      - name: "IAQ Temperature"
+        unit_of_measurement: "°C"
+        device_class: temperature
+        state: "{{ trigger.json.temperature }}"
+
+      - name: "IAQ Humidity"
+        unit_of_measurement: "%"
+        device_class: humidity
+        state: "{{ trigger.json.humidity }}"
+
+      - name: "IAQ Index"
+        unit_of_measurement: "index"
+        state: "{{ trigger.json.iaq }}"
+
+      - name: "IAQ VOC"
+        unit_of_measurement: "ppm"
+        state: "{{ trigger.json.voc }}"
+
+      - name: "IAQ CO"
+        unit_of_measurement: "ppm"
+        state: "{{ trigger.json.co }}"
+
+      - name: "IAQ Gas Raw"
+        unit_of_measurement: "Ω"
+        state: "{{ trigger.json.gas }}"
+
+      - name: "IAQ Lead"
+        unit_of_measurement: "µg/m³"
+        state: "{{ trigger.json.lead }}"
+
+      - name: "IAQ Mold"
+        unit_of_measurement: "index"
+        state: "{{ trigger.json.mold }}"
+
+      - name: "IAQ MQ4"
+        unit_of_measurement: "ppm"
+        state: "{{ trigger.json.mq4 }}"
+
+      - name: "IAQ MQ7"
+        unit_of_measurement: "ppm"
+        state: "{{ trigger.json.mq7 }}"
+
+      - name: "IAQ Radon"
+        unit_of_measurement: "Bq/m³"
+        state: "{{ trigger.json.radon }}"
+
+      - name: "IAQ Smoke"
+        unit_of_measurement: "index"
+        state: "{{ trigger.json.smoke }}"
